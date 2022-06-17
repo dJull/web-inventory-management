@@ -50,8 +50,8 @@
 				</div>
 
 				<div class="form-group justify-content-center d-flex">
-					<select style="width: 50%;" class="form-control" name="akses" required>
-						<option value="" style="text-align: center;"> Login As </option>
+					<select style="width: 50%;" class="custom-select" name="akses" required>
+						<option value="" style="text-align: center;" selected> Login As </option>
 						<option value="Admin">Admin</option>
 						<option value="Kasir">Kasir</option>
 					</select>
