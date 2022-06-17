@@ -28,10 +28,11 @@
 		}
 	</style>
 	<!-- FORM -->
+
 	<div class="align-items-center d-flex flex-column" style="margin-top: 4rem;">
-		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4"><?php include("layout_alert.php"); ?></div>
-		</div>
+
+		<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4"><?php include("layout_alert.php"); ?></div>
+
 		<div class="card csscard">
 			<form method="POST" action="login_auth.php">
 				<h3 style="margin-top: 1rem; text-align:center">Login</h3>
