@@ -1,96 +1,84 @@
 <?php $pagedesc = "Login"; ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
 
-	<title>Sistem Informasi Bengkel - <?php echo $pagedesc ?></title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-	<link href="foto/logos.png" rel="icon" type="images/x-icon">
-
-	<!-- Bootstrap Core CSS -->
-	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- Custom CSS -->
-	<link href="dist/css/offline-font.css" rel="stylesheet">
-	<link href="dist/css/custom.css" rel="stylesheet">
-
-	<!-- Custom Fonts -->
-	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-	<!-- jQuery -->
-	<script src="libs/jquery/dist/jquery.min.js"></script>
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
 </head>
 
-<body style="background-color: #f1f4f7">
+<body>
+	<style>
+		.csscard {
+			min-height: 200px;
+			width: 35rem;
+		}
 
-	<section id="main-wrapper" style="margin-top: 120px">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4"><?php include("layout_alert.php"); ?></div>
-			</div><!-- /.row -->
-			<div class="row">
-				<div id="page-wrapper" class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4" style="background-color: #ffffff; border-radius: 3px; webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); box-shadow: 0 1px 1px rgba(0,0,0,.05)">
-					<div class="row">
-						<div class="col-lg-12">
-							<br />
-							<center><img src="foto/logos.png" width="120" height="120"></center>
-							<h2 class="text-center">Duo Putri Inventory Management</h2>
-						</div>
-					</div><!-- /.row -->
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="panel panel-default">
-								<div class="panel-body">
-									<form action="login_auth.php" method="post">
-										<div class="form-group">
-											<input type="text" class="form-control" name="username" placeholder="Username" required>
-										</div>
-										<div class="form-group">
-											<input type="password" class="form-control" name="password" placeholder="Password" required>
-										</div>
-										<div class="form-group">
-											<select class="form-control" name="akses" required>
-												<option value="">======= Login Sebagai =======</option>
-												<option value="Admin">Admin</option>
-												<option value="Kasir">Kasir</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-success btn-block" name="login" value="Masuk">
-										</div>
-									</form>
-								</div>
-							</div>
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.col -->
-			</div><!-- /.row -->
-		</div><!-- /.container -->
-	</section>
-
-	<!-- footer-bottom -->
-	<div class="navbar navbar-inverse navbar-fixed-bottom footer-bottom">
-		<div class="container text-center">
-			<p class="text-center" style="color: #D1C4E9; margin: 0 0 5px; padding: 0"><small>Duo Putri Inventory Management</small></p>
+		.inputcss {
+			width: 80%;
+			margin: auto;
+			display: block;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	</style>
+	<!-- FORM -->
+	<div class="align-items-center d-flex flex-column" style="margin-top: 4rem;">
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4"><?php include("layout_alert.php"); ?></div>
 		</div>
-	</div><!-- /.footer-bottom -->
+		<div class="card csscard">
+			<form method="POST" action="login_auth.php">
+				<h3 style="margin-top: 1rem; text-align:center">Login</h3>
+				<div class="d-flex justify-content-center align-items-center">
+					<hr style="width: 80%;">
+				</div>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+				<div class="form-group">
+					<label for="inputEmail" style="padding-left: 57px;">Username</label>
+					<input type="username" class="form-control inputcss" name="username" placeholder="Masukkan Username Anda">
+				</div>
 
+				<div class="form-group">
+					<label for="inputPassword" style="padding-left: 57px;">Kata Sandi</label>
+					<input type="password" class="form-control inputcss" name="password" placeholder="Kata Sandi">
+				</div>
+
+				<div class="form-group justify-content-center d-flex">
+					<select style="width: 50%;" class="form-control" name="akses" required>
+						<option value="" style="text-align: center;"> Login As </option>
+						<option value="Admin">Admin</option>
+						<option value="Kasir">Kasir</option>
+					</select>
+				</div>
+
+				<!-- BUTTON -->
+				<div style="margin-top: 1rem; text-align:center">
+					<button type="submit" class="btn btn-primary" name="login">Login</button>
+				</div>
+
+				<!-- PARAGRAPH -->
+				<p style="margin-top: 1rem; text-align:center"> Anda belum punya akun? <a href="register.php"> Register</a> </p>
+
+			</form>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
 </body>
 
 </html>
