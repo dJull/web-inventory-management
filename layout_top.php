@@ -55,27 +55,16 @@ $tahun = date("Y");
     <![endif]-->
 </head>
 
-<body>
-	<div id="wrapper">
+<body style="background-color: #C9E4C5;">
+	<div id="wrapper" style="background-color: #C9E4C5;">
 
 		<!-- Navigation -->
-		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+		<nav class="navbar navbar-default navbar-static-top" style="background-color: #B5CDA3 ;" role="navigation" style="margin-bottom: 0">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
 				<a class="navbar-brand hidden-xs" href="index.php">
 					<img src="foto/logos.png" alt="brand" width="32" class="float-left image-brand">
 					<div class="float-right">&nbsp;<strong>Duo Putri Inventory Management</strong></div>
-					<div class="clear-both"></div>
-				</a>
-				<a class="navbar-brand visible-xs" href="index.php">
-					<img src="foto/logos.png" alt="brand" width="32" class="float-left image-brand">
-					<div class="float-right">&nbsp;<strong>Duo Putri Inventory Management</strong></div>
-					<div class="clear-both"></div>
+
 				</a>
 			</div><!-- /.navbar-header -->
 
@@ -92,7 +81,7 @@ $tahun = date("Y");
 				</li><!-- /.dropdown -->
 			</ul><!-- /.navbar-top-links -->
 
-			<div class="navbar-default sidebar" role="navigation">
+			<div class="navbar-default sidebar" style="background-color: #FAEBE0;" role="navigation">
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
 						<li class="sidebar-search">
@@ -101,9 +90,9 @@ $tahun = date("Y");
 						</li>
 						<?php
 						if ($pagedesc == "Beranda") {
-							echo '<li><a href="index.php" class="active"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a></li>';
+							echo '<li><a href="index.php" class="active"><i class="fa fa-tachometer fa-fw"></i>&nbsp;Beranda</a></li>';
 						} else {
-							echo '<li><a href="index.php"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a></li>';
+							echo '<li><a href="index.php"><i class="fa fa-tachometer fa-fw"></i>&nbsp;Beranda</a></li>';
 						}
 
 						if (isset($menuparent) && $menuparent == "supplier") {
@@ -113,7 +102,7 @@ $tahun = date("Y");
 						}
 						?>
 						<!-- open <li> tag generated with php, see line 155-160 -->
-						<a href="#"><i class="fa fa-chain fa-fw"></i>&nbsp;Data Supplier<span class="fa arrow"></span></a>
+						<a href="#"><i class="fa fa-tags fa-fw"></i>&nbsp;Data Supplier<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<?php
 							if ($pagedesc == "Data Supplier") {
@@ -149,7 +138,7 @@ $tahun = date("Y");
 						}
 						?>
 						<!-- open <li> tag generated with php, see line 155-160 -->
-						<a href="#"><i class="fa fa-th-large fa-fw"></i>&nbsp;Data Barang dan Jasa<span class="fa arrow"></span></a>
+						<a href="#"><i class="fa fa-exchange fa-fw"></i>&nbsp;Data Barang dan Jasa<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<?php
 							if ($pagedesc == "Barang Masuk") {
@@ -177,7 +166,7 @@ $tahun = date("Y");
 						}
 						?>
 						<!-- open <li> tag generated with php, see line 134-139 -->
-						<a href="#"><i class="fa fa-gear fa-fw"></i>&nbsp;Transaksi<span class="fa arrow"></span></a>
+						<a href="#"><i class="fa fa-credit-card fa-fw"></i>&nbsp;Transaksi<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<?php
 							if ($pagedesc == "Data Transaksi") {
@@ -196,7 +185,7 @@ $tahun = date("Y");
 						}
 						?>
 						<!-- open <li> tag generated with php, see line 155-160 -->
-						<a href="#"><i class="fa fa-folder fa-fw"></i>&nbsp;Laporan<span class="fa arrow"></span></a>
+						<a href="#"><i class="fa fa-file-o fa-fw"></i>&nbsp;Laporan<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<?php
 							if ($pagedesc == "Laporan Transaksi") {

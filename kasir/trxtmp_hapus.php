@@ -4,4 +4,3 @@
 		$sql = "DELETE FROM tmp_trx WHERE id_tmp='". $id ."'";
 		$ress = mysqli_query($conn, $sql);
 		header("location: trx_baru.php?act=delete&msg=success");
-?>

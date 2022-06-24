@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #B5CDA3;">
 	<style>
 		.csscard {
 			min-height: 200px;
@@ -29,11 +29,11 @@
 	</style>
 	<!-- FORM -->
 
-	<div class="align-items-center d-flex flex-column" style="margin-top: 4rem;">
+	<div class="align-items-center d-flex flex-column" style="margin-top: 6rem; ">
 
 		<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4"><?php include("layout_alert.php"); ?></div>
 
-		<div class="card csscard">
+		<div class="card csscard" style="background-color: #C9E4C5 ;">
 			<form method="POST" action="login_auth.php">
 				<h3 style="margin-top: 1rem; text-align:center">Login</h3>
 				<div class="d-flex justify-content-center align-items-center">
@@ -60,11 +60,8 @@
 
 				<!-- BUTTON -->
 				<div style="margin-top: 1rem; text-align:center">
-					<button type="submit" class="btn btn-primary" name="login">Login</button>
+					<button type="submit" class="btn btn-primary mb-4" name="login">Login</button>
 				</div>
-
-				<!-- PARAGRAPH -->
-				<p style="margin-top: 1rem; text-align:center"> Anda belum punya akun? <a href="register.php"> Register</a> </p>
 
 			</form>
 		</div>

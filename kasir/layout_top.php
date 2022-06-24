@@ -22,7 +22,7 @@ $tahun = date("Y");
 
 	<title>Sistem Informasi Duo Putri - <?php echo $pagedesc ?></title>
 
-	<link href="foto/logo.png" rel="icon" type="images/x-icon">
+	<link href="foto/logos.png" rel="icon" type="images/x-icon">
 
 	<!-- Bootstrap Core CSS -->
 	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,11 +55,11 @@ $tahun = date("Y");
     <![endif]-->
 </head>
 
-<body>
-	<div id="wrapper">
+<body style="background-color: #C9E4C5 ;">
+	<div id="wrapper" style="background-color: #C9E4C5;">
 
 		<!-- Navigation -->
-		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+		<nav class="navbar navbar-default navbar-static-top" style="background-color: #B5CDA3 ;" role="navigation" style="margin-bottom: 0">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
@@ -73,7 +73,7 @@ $tahun = date("Y");
 					<div class="clear-both"></div>
 				</a>
 				<a class="navbar-brand visible-xs" href="index.php">
-					<img src="foto/logo.png" alt="brand" width="32" class="float-left image-brand">
+					<img src="foto/logos.png" alt="brand" width="32" class="float-left image-brand">
 					<div class="float-right">&nbsp;<strong>Duo Putri Inventory Management</strong></div>
 					<div class="clear-both"></div>
 				</a>
@@ -92,7 +92,7 @@ $tahun = date("Y");
 				</li><!-- /.dropdown -->
 			</ul><!-- /.navbar-top-links -->
 
-			<div class="navbar-default sidebar" role="navigation">
+			<div class="navbar-default sidebar" role="navigation" style="background-color: #FAEBE0;">
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
 						<li class="sidebar-search">

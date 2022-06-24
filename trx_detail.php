@@ -33,8 +33,8 @@ if ($_GET) {
 								<img src="foto/logos.png" alt="logo-dkm" width="70" />
 							</td>
 							<td class="text-center" width="60%">
-								<b>Bengkel Mantap Jiwa</b> <br>
-								Bekasi<br>
+								<b>Duo Putri Gold Store</b> <br>
+								Palembang<br>
 								Telp: (021) 192819189<br>
 							<td class="text-right" width="20%">
 							</td>

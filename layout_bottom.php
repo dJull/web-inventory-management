@@ -1,11 +1,16 @@
 	</div><!-- /#wrapper -->
 
 	<!-- footer-bottom -->
-	<div class="navbar navbar-inverse navbar-fixed-bottom footer-bottom">
-		<div class="container text-center">
-			<p class="text-center" style="color: #D1C4E9; margin: 0 0 5px; padding: 0"><small>Duo Putri Inventory Management</p>
+	<!-- Footer -->
+	<footer class="bg-light text-center text-lg-start">
+		<!-- Copyright -->
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+			© 2020 Copyright:
+			<a class="text-dark">Duo Putri Inventory Management</a>
 		</div>
-	</div><!-- /.footer-bottom -->
+		<!-- Copyright -->
+	</footer>
+	<!-- Footer -->
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>

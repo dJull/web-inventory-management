@@ -1,20 +1,21 @@
 <?php
-	include("sess_check.php");
+include("sess_check.php");
 
-	include("dist/function/format_tanggal.php");
-	include("dist/function/format_rupiah.php");
-	$mulai 	 = $_GET['awal'];
-	$selesai = $_GET['akhir'];
-	$sql = "SELECT trxbarang.*, supplier.*, barangjasa.* FROM trxbarang, supplier, barangjasa WHERE
+include("dist/function/format_tanggal.php");
+include("dist/function/format_rupiah.php");
+$mulai 	 = $_GET['awal'];
+$selesai = $_GET['akhir'];
+$sql = "SELECT trxbarang.*, supplier.*, barangjasa.* FROM trxbarang, supplier, barangjasa WHERE
 			trxbarang.id_spl=supplier.id_spl AND trxbarang.id_brg=barangjasa.id_brg AND 
 			trxbarang.tgl_trxbrg BETWEEN '$mulai' AND '$selesai' ORDER BY trxbarang.id_trxbrg DESC";
-	$ress = mysqli_query($conn, $sql);
-	// deskripsi halaman
-	$pagedesc = "Laporan Data Barang Masuk - Periode " . IndonesiaTgl($mulai) ." - ". IndonesiaTgl($selesai);
-	$pagetitle = str_replace(" ", "_", $pagedesc)
+$ress = mysqli_query($conn, $sql);
+// deskripsi halaman
+$pagedesc = "Laporan Data Barang Masuk - Periode " . IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai);
+$pagetitle = str_replace(" ", "_", $pagedesc)
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +24,7 @@
 
 	<title><?php echo $pagetitle ?></title>
 
-	<link href="foto/logo.png" rel="icon" type="images/x-icon">
+	<link href="foto/logos.png" rel="icon" type="images/x-icon">
 
 
 	<!-- Bootstrap Core CSS -->
@@ -35,7 +36,7 @@
 
 	<!-- Custom Fonts -->
 	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	
+
 	<!-- jQuery -->
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 
@@ -54,12 +55,12 @@
 				<tbody>
 					<tr>
 						<td class="text-left" width="20%">
-							<img src="foto/logo.png" alt="logo-dkm" width="70" />
+							<img src="foto/logos.png" alt="logo-dkm" width="70" />
 						</td>
 						<td class="text-center" width="60%">
-						<b>Bengkel Mantap Jiwa</b> <br>
-						Bekasi<br>
-						Telp: (021) 192819189<br>
+							<b>Duo Putri Gold Store</b> <br>
+							Palembang<br>
+							Telp: (021) 192819189<br>
 						<td class="text-right" width="20%">
 						</td>
 					</tr>
@@ -71,36 +72,36 @@
 
 	<section id="body-of-report">
 		<div class="container-fluid">
-			<h4 class="text-center">Laporan Data Barang Masuk Periode Tanggal <?php echo format_tanggal($mulai);?> s/d <?php echo format_tanggal($selesai);?></h4>
+			<h4 class="text-center">Laporan Data Barang Masuk Periode Tanggal <?php echo format_tanggal($mulai); ?> s/d <?php echo format_tanggal($selesai); ?></h4>
 			<br />
-								<table class="table table-striped table-bordered table-hover" id="tabel-data">
-									<thead>
-										<tr>
-											<th width="1%">No</th>
-											<th width="10%">ID Trx</th>
-											<th width="10%">Tgl Trx</th>
-											<th width="10%">Supplier</th>
-											<th width="10%">Barang</th>
-											<th width="5%">Jumlah</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php
-											$i = 1;
-											while($data = mysqli_fetch_array($ress)) {
-												echo '<tr>';
-												echo '<td class="text-center">'. $i .'</td>';
-												echo '<td class="text-center">'. $data['id_trxbrg'] .'</td>';
-												echo '<td class="text-center">'. format_tanggal($data['tgl_trxbrg']) .'</td>';
-												echo '<td class="text-center">'. $data['nama_spl'] .'</td>';
-												echo '<td class="text-center">'. $data['nama'] .'</td>';
-												echo '<td class="text-center">'. $data['jml_brg'] .'</td>';
-												echo '</tr>';												
-												$i++;
-											}
-										?>
-									</tbody>
-								</table>
+			<table class="table table-striped table-bordered table-hover" id="tabel-data">
+				<thead>
+					<tr>
+						<th width="1%">No</th>
+						<th width="10%">ID Trx</th>
+						<th width="10%">Tgl Trx</th>
+						<th width="10%">Supplier</th>
+						<th width="10%">Barang</th>
+						<th width="5%">Jumlah</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					$i = 1;
+					while ($data = mysqli_fetch_array($ress)) {
+						echo '<tr>';
+						echo '<td class="text-center">' . $i . '</td>';
+						echo '<td class="text-center">' . $data['id_trxbrg'] . '</td>';
+						echo '<td class="text-center">' . format_tanggal($data['tgl_trxbrg']) . '</td>';
+						echo '<td class="text-center">' . $data['nama_spl'] . '</td>';
+						echo '<td class="text-center">' . $data['nama'] . '</td>';
+						echo '<td class="text-center">' . $data['jml_brg'] . '</td>';
+						echo '</tr>';
+						$i++;
+					}
+					?>
+				</tbody>
+			</table>
 			<br />
 		</div><!-- /.container -->
 	</section>
@@ -117,4 +118,5 @@
 	<script src="libs/jTerbilang/jTerbilang.js"></script>
 
 </body>
+
 </html>

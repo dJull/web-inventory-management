@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Jun 2019 pada 14.05
--- Versi Server: 5.6.26
--- PHP Version: 5.6.12
+-- Generation Time: Jun 24, 2022 at 05:41 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,20 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
+CREATE TABLE `admin` (
   `id_adm` int(11) NOT NULL,
   `nama_adm` varchar(50) NOT NULL,
   `telp_adm` varchar(15) NOT NULL,
   `user_adm` varchar(50) NOT NULL,
   `pass_adm` varchar(100) NOT NULL,
   `foto_adm` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_adm`, `nama_adm`, `telp_adm`, `user_adm`, `pass_adm`, `foto_adm`) VALUES
@@ -45,10 +46,10 @@ INSERT INTO `admin` (`id_adm`, `nama_adm`, `telp_adm`, `user_adm`, `pass_adm`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barangjasa`
+-- Table structure for table `barangjasa`
 --
 
-CREATE TABLE IF NOT EXISTS `barangjasa` (
+CREATE TABLE `barangjasa` (
   `id_brg` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `jenis` varchar(20) NOT NULL,
@@ -56,24 +57,22 @@ CREATE TABLE IF NOT EXISTS `barangjasa` (
   `harga` varchar(20) NOT NULL,
   `keterangan` text NOT NULL,
   `id_adm` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `barangjasa`
+-- Dumping data for table `barangjasa`
 --
 
 INSERT INTO `barangjasa` (`id_brg`, `nama`, `jenis`, `stok`, `harga`, `keterangan`, `id_adm`) VALUES
-(1, 'Oli Yamalube 800cc', 'barang', '12', '35000', 'Oli Yamalube 800cc', 1),
-(4, 'Paket Service Ekonomis', 'jasa', '1', '30000', 'Ekonomis', 1),
-(5, 'Suspensi Matic', 'barang', '5', '175000', 'Suspensi matic', 1);
+(6, 'Kalung Emas', 'barang', '0', '500000', 'Seberat 0.5gr', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kasir`
+-- Table structure for table `kasir`
 --
 
-CREATE TABLE IF NOT EXISTS `kasir` (
+CREATE TABLE `kasir` (
   `id_kasir` int(11) NOT NULL,
   `nama_kasir` varchar(50) NOT NULL,
   `telp_kasir` varchar(20) NOT NULL,
@@ -81,91 +80,85 @@ CREATE TABLE IF NOT EXISTS `kasir` (
   `pass_kasir` varchar(100) NOT NULL,
   `foto_kasir` text NOT NULL,
   `id_adm` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kasir`
+-- Dumping data for table `kasir`
 --
 
 INSERT INTO `kasir` (`id_kasir`, `nama_kasir`, `telp_kasir`, `user_kasir`, `pass_kasir`, `foto_kasir`, `id_adm`) VALUES
-(1, 'Test Kasir', '0210181928', 'kasir', 'password', '06062019071454r.jpg', 1);
+(1, 'Kasir 1', '0210181928', 'kasir1', 'Kasir1', '06062019071454r.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konsumen`
+-- Table structure for table `konsumen`
 --
 
-CREATE TABLE IF NOT EXISTS `konsumen` (
+CREATE TABLE `konsumen` (
   `id_kon` int(11) NOT NULL,
   `nama_kon` varchar(50) NOT NULL,
   `telp_kon` varchar(20) NOT NULL,
   `alamat_kon` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `konsumen`
+-- Dumping data for table `konsumen`
 --
 
 INSERT INTO `konsumen` (`id_kon`, `nama_kon`, `telp_kon`, `alamat_kon`) VALUES
-(0, 'Umum', '0', '-'),
-(3, 'Test Konsumen', '012391839', 'Bekasi');
+(4, 'Bintang', '0812878718', 'Jl. Kampung');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier`
+-- Table structure for table `supplier`
 --
 
-CREATE TABLE IF NOT EXISTS `supplier` (
+CREATE TABLE `supplier` (
   `id_spl` int(11) NOT NULL,
   `nama_spl` varchar(50) NOT NULL,
   `telp_spl` varchar(20) NOT NULL,
   `alamat_spl` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `supplier`
+-- Dumping data for table `supplier`
 --
 
 INSERT INTO `supplier` (`id_spl`, `nama_spl`, `telp_spl`, `alamat_spl`) VALUES
-(2, 'Test Supplier', '08129828919', 'Bekasi'),
-(3, 'Supplier Oli', '012123910', 'Bekasi\r\n');
+(4, 'Toko Emas Kerinci', '08126121810', 'Jl. Kerinci');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_trx`
+-- Table structure for table `tmp_trx`
 --
 
-CREATE TABLE IF NOT EXISTS `tmp_trx` (
+CREATE TABLE `tmp_trx` (
   `id_tmp` int(11) NOT NULL,
   `id_trx` varchar(20) NOT NULL,
   `id_brg` int(11) NOT NULL,
   `jml` int(11) NOT NULL,
   `id_kasir` int(11) NOT NULL,
   `status` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tmp_trx`
+-- Dumping data for table `tmp_trx`
 --
 
 INSERT INTO `tmp_trx` (`id_tmp`, `id_trx`, `id_brg`, `jml`, `id_kasir`, `status`) VALUES
-(2, '02062019094643', 4, 1, 1, 'Done'),
-(4, '02062019094643', 1, 2, 1, 'Done'),
-(7, '02062019120923', 4, 1, 1, 'Done'),
-(8, '02062019121127', 4, 1, 1, 'Done'),
-(10, '06062019094346', 1, 1, 1, 'Done'),
-(11, '06062019100803', 4, 1, 1, 'Done');
+(14, '24062022214653', 6, 2, 1, 'Done'),
+(15, '24062022215142', 6, 3, 1, 'Done');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `trx`
+-- Table structure for table `trx`
 --
 
-CREATE TABLE IF NOT EXISTS `trx` (
+CREATE TABLE `trx` (
   `id_trx` varchar(20) NOT NULL,
   `id_kon` int(11) NOT NULL,
   `tgl_trx` date NOT NULL,
@@ -174,23 +167,20 @@ CREATE TABLE IF NOT EXISTS `trx` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `trx`
+-- Dumping data for table `trx`
 --
 
 INSERT INTO `trx` (`id_trx`, `id_kon`, `tgl_trx`, `total`, `id_kasir`) VALUES
-('02062019094643', 0, '2019-06-02', '100000', 1),
-('02062019120923', 3, '2019-06-02', '30000', 1),
-('02062019121127', 0, '2019-06-02', '30000', 1),
-('06062019094346', 0, '2019-06-06', '35000', 1),
-('06062019100803', 3, '2019-06-06', '30000', 1);
+('24062022214653', 0, '2022-06-24', '1000000', 1),
+('24062022215142', 4, '2022-06-24', '1500000', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `trxbarang`
+-- Table structure for table `trxbarang`
 --
 
-CREATE TABLE IF NOT EXISTS `trxbarang` (
+CREATE TABLE `trxbarang` (
   `id_trxbrg` varchar(20) NOT NULL,
   `tgl_trxbrg` date NOT NULL,
   `id_brg` int(11) NOT NULL,
@@ -200,13 +190,11 @@ CREATE TABLE IF NOT EXISTS `trxbarang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `trxbarang`
+-- Dumping data for table `trxbarang`
 --
 
 INSERT INTO `trxbarang` (`id_trxbrg`, `tgl_trxbrg`, `id_brg`, `id_spl`, `jml_brg`, `ket_trxbrg`) VALUES
-('00365602062019', '2019-06-02', 1, 3, 10, 'Oli'),
-('04184902062019', '2019-06-02', 5, 2, 5, 'suspensi'),
-('04190502062019', '2019-06-02', 1, 3, 5, 'masuk lagi');
+('21453624062022', '2022-05-31', 6, 4, 5, 'Emas Murni');
 
 --
 -- Indexes for dumped tables
@@ -268,32 +256,39 @@ ALTER TABLE `trxbarang`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_adm` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_adm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `barangjasa`
 --
 ALTER TABLE `barangjasa`
-  MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `kasir`
 --
 ALTER TABLE `kasir`
-  MODIFY `id_kasir` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id_kasir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `konsumen`
 --
 ALTER TABLE `konsumen`
-  MODIFY `id_kon` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id_kon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id_spl` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id_spl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `tmp_trx`
 --
 ALTER TABLE `tmp_trx`
-  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

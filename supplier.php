@@ -9,7 +9,7 @@ include("dist/function/format_rupiah.php");
 ?>
 <!-- top of file -->
 <!-- Page Content -->
-<div id="page-wrapper">
+<div id="page-wrapper" style="background-color: #C9E4C5;">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
@@ -25,7 +25,7 @@ include("dist/function/format_rupiah.php");
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<a href="supplier_tambah.php" class="btn btn-success">Tambah</a>
+						<a href="supplier_tambah.php" class="btn btn-success">Add</a>
 					</div>
 					<div class="panel-body">
 						<table class="table table-striped table-bordered table-hover" id="tabel-data">

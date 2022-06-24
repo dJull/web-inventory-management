@@ -1,10 +1,9 @@
 <?php
-  //error_reporting(0);
+//error_reporting(0);
 
-  $dbhost = "localhost";
-  $dbuser = "root";
-  $dbpass = "";
-  $dbname = "db_bengkel";
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "db_duoputri";
 
-  $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Tidak dapat terhubung ke database: ".mysqli_error());
-?>
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Tidak dapat terhubung ke database: " . mysqli_error());
