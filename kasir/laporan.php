@@ -114,26 +114,26 @@ include("dist/function/format_rupiah.php");
 				<?php } ?>
 			</div><!-- /.container-fluid -->
 		</div><!-- /#page-wrapper -->
-		<!-- bottom of file -->
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#tabel-data').DataTable({
-					"responsive": true,
-					"processing": true,
-					"columnDefs": [{
-						"orderable": false,
-						"targets": [4]
-					}]
-				});
-
-				$('#tabel-data').parent().addClass("table-responsive");
+	</div><!-- bottom of file -->
+	<?php
+	include("layout_bottom.php");
+	?>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#tabel-data').DataTable({
+				"responsive": true,
+				"processing": true,
+				"columnDefs": [{
+					"orderable": false,
+					"targets": [4]
+				}]
 			});
-		</script>
-		<script>
-			var app = {
-				code: '0'
-			};
-		</script>
-		<?php
-		include("layout_bottom.php");
-		?>
+
+			$('#tabel-data').parent().addClass("table-responsive");
+		});
+	</script>
+	<script>
+		var app = {
+			code: '0'
+		};
+	</script>
