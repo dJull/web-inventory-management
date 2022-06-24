@@ -59,7 +59,7 @@ $tahun = date("Y");
 	<div id="wrapper" style="background-color: #C9E4C5;">
 
 		<!-- Navigation -->
-		<nav class="navbar navbar-default navbar-static-top" style="background-color: #B5CDA3 ;" role="navigation" style="margin-bottom: 0">
+		<nav class="navbar navbar-default navbar-static-top" style="background-color: #8fa381 ;" role="navigation" style="margin-bottom: 0">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
@@ -69,7 +69,7 @@ $tahun = date("Y");
 				</button>
 				<a class="navbar-brand hidden-xs" href="index.php">
 					<img src="foto/logo.png" alt="brand" width="32" class="float-left image-brand">
-					<div class="float-right">&nbsp;<strong>Duo Putri Inventory Management</strong></div>
+					<div class="float-right">&nbsp;<strong style="color: #f5f0f0;">Duo Putri Inventory Management</strong></div>
 					<div class="clear-both"></div>
 				</a>
 				<a class="navbar-brand visible-xs" href="index.php">
@@ -81,7 +81,7 @@ $tahun = date("Y");
 
 			<ul class="nav navbar-top-links navbar-right">
 				<li class="dropdown dropdown-right">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<a class="dropdown-toggle" style="color: black; " data-toggle="dropdown" href="#">
 						<img src="../foto/<?php echo $sess_kasirfoto; ?>" width="20px" height="20px" padding="0px">&nbsp;&nbsp;<?php echo ucfirst($sess_kasirname); ?>&nbsp;<i class="fa fa-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-user">

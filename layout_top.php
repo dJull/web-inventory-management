@@ -59,7 +59,7 @@ $tahun = date("Y");
 	<div id="wrapper" style="background-color: #C9E4C5;">
 
 		<!-- Navigation -->
-		<nav class="navbar navbar-default navbar-static-top" style="background-color: #B5CDA3 ;" role="navigation" style="margin-bottom: 0">
+		<nav class="navbar navbar-default navbar-static-top" style="background-color: #8fa381  ;" role="navigation" style="margin-bottom: 0">
 			<div class="navbar-header">
 				<a class="navbar-brand hidden-xs" href="index.php">
 					<img src="foto/logos.png" alt="brand" width="32" class="float-left image-brand">
