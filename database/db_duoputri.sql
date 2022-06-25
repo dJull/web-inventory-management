@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2022 at 05:41 PM
+-- Generation Time: Jun 25, 2022 at 03:05 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_bengkel`
+-- Database: `db_duoputri`
 --
 
 -- --------------------------------------------------------
@@ -58,13 +58,6 @@ CREATE TABLE `barangjasa` (
   `keterangan` text NOT NULL,
   `id_adm` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `barangjasa`
---
-
-INSERT INTO `barangjasa` (`id_brg`, `nama`, `jenis`, `stok`, `harga`, `keterangan`, `id_adm`) VALUES
-(6, 'Kalung Emas', 'barang', '0', '500000', 'Seberat 0.5gr', 1);
 
 -- --------------------------------------------------------
 
@@ -122,13 +115,6 @@ CREATE TABLE `supplier` (
   `alamat_spl` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `supplier`
---
-
-INSERT INTO `supplier` (`id_spl`, `nama_spl`, `telp_spl`, `alamat_spl`) VALUES
-(4, 'Toko Emas Kerinci', '08126121810', 'Jl. Kerinci');
-
 -- --------------------------------------------------------
 
 --
@@ -144,14 +130,6 @@ CREATE TABLE `tmp_trx` (
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tmp_trx`
---
-
-INSERT INTO `tmp_trx` (`id_tmp`, `id_trx`, `id_brg`, `jml`, `id_kasir`, `status`) VALUES
-(14, '24062022214653', 6, 2, 1, 'Done'),
-(15, '24062022215142', 6, 3, 1, 'Done');
-
 -- --------------------------------------------------------
 
 --
@@ -165,14 +143,6 @@ CREATE TABLE `trx` (
   `total` varchar(20) NOT NULL,
   `id_kasir` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `trx`
---
-
-INSERT INTO `trx` (`id_trx`, `id_kon`, `tgl_trx`, `total`, `id_kasir`) VALUES
-('24062022214653', 0, '2022-06-24', '1000000', 1),
-('24062022215142', 4, '2022-06-24', '1500000', 1);
 
 -- --------------------------------------------------------
 
@@ -188,13 +158,6 @@ CREATE TABLE `trxbarang` (
   `jml_brg` int(11) NOT NULL,
   `ket_trxbrg` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `trxbarang`
---
-
-INSERT INTO `trxbarang` (`id_trxbrg`, `tgl_trxbrg`, `id_brg`, `id_spl`, `jml_brg`, `ket_trxbrg`) VALUES
-('21453624062022', '2022-05-31', 6, 4, 5, 'Emas Murni');
 
 --
 -- Indexes for dumped tables
