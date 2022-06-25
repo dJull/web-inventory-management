@@ -101,9 +101,9 @@ $tahun = date("Y");
 						</li>
 						<?php
 						if ($pagedesc == "Beranda") {
-							echo '<li><a href="index.php" class="active"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a></li>';
+							echo '<li><a href="index.php" class="active"><i class="fa fa-tachometer fa-fw"></i>&nbsp;Beranda</a></li>';
 						} else {
-							echo '<li><a href="index.php"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a></li>';
+							echo '<li><a href="index.php"><i class="fa fa-tachometer fa-fw"></i>&nbsp;Beranda</a></li>';
 						}
 						if (isset($menuparent) && $menuparent == "transaksi") {
 							echo '<li class="active">';
@@ -112,7 +112,7 @@ $tahun = date("Y");
 						}
 						?>
 						<!-- open <li> tag generated with php, see line 134-139 -->
-						<a href="#"><i class="fa fa-gear fa-fw"></i>&nbsp;Transaksi<span class="fa arrow"></span></a>
+						<a href="#"><i class="fa fa-credit-card fa-fw"></i>&nbsp;Transaksi<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<?php
 							if ($pagedesc == "Transaksi Baru") {
@@ -156,7 +156,7 @@ $tahun = date("Y");
 						}
 						?>
 						<!-- open <li> tag generated with php, see line 155-160 -->
-						<a href="#"><i class="fa fa-folder fa-fw"></i>&nbsp;Laporan<span class="fa arrow"></span></a>
+						<a href="#"><i class="fa fa-file-o fa-fw"></i>&nbsp;Laporan<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<?php
 							if ($pagedesc == "Laporan") {
